@@ -146,18 +146,20 @@ export default function Suppliers() {
                                             <EditOutlinedIcon fontSize="small" />
                                         </Controls.ActionButton>
                                         <Controls.ActionButton
-                                            color="secondary">
-                
-                                                onClick={() => { 
-                                                setConfirmDialog({
-                                                    isOpen: true,
-                                                    title: 'Are you sure to delete this record?',
-                                                    subTitle: "You can't undo this operation",
-                                                    onConfirm: () => { onDelete(item.id) }
-                                                })
-                                            }}
-                                            <CloseIcon fontSize="small" />
-                                        </Controls.ActionButton>
+                                            color="secondary"
+                                              onClick={() => { 
+                                                  setConfirmDialog({
+                                                      isOpen: true,
+                                                      title: "Are you sure to delete this record?",
+                                                      subTitle: "You can't undo this operation",
+                                                      onConfirm: () => {onDelete(item.id)}
+                                                  })
+                                                 
+                                              }}>
+                                              <CloseIcon fontSize="small" />
+                                                 
+                                                   
+                                     </Controls.ActionButton>
                                     </TableCell>
                                 </TableRow>)
                             )

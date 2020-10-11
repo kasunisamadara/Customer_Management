@@ -1,5 +1,4 @@
-// eslint-disable-next-line
-import React, { useState, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import { Grid, } from '@material-ui/core';
 import Controls from "../../Components/Controls/Controls";
 import { UseForm, Form } from '../../Components/UseForm';
@@ -17,7 +16,8 @@ const initialFValues = {
     id: 0,
     fullName: '',
     email: '',
-    mobile: '',
+    item:'',
+    mobile: '',  
     city: '',
     gender: 'male',
     categoryId: '',
@@ -31,11 +31,10 @@ export default function SupplierForm(props) {
         let temp = { ...errors }
         if ('fullName' in fieldValues)
             temp.fullName = fieldValues.fullName ? "" : "This field is required."
-         if ('item' in fieldValues)
-            temp.item = fieldValues.item ? "" : "This field is required."
-                
         if ('email' in fieldValues)
             temp.email = (/$^|.+@.+..+/).test(fieldValues.email) ? "" : "Email is not valid."
+         if ('item' in fieldValues)
+            temp.item = fieldValues.item ? "" : "This field is required."
         if ('mobile' in fieldValues)
             temp.mobile = fieldValues.mobile.length > 9 ? "" : "Minimum 10 numbers required."
         if ('categoryId' in fieldValues)
@@ -132,7 +131,7 @@ export default function SupplierForm(props) {
                     <Controls.DatePicker
                         name="joinDate"
                         label="Join Date"
-                        value={values.hireDate}
+                        value={values.joinDate}
                         onChange={handleInputChange}
                     />
                     

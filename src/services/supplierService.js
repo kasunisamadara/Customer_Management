@@ -9,7 +9,7 @@ export const getCategoryCollection = ()=>([
     { id: '3', title: 'Preferred' },
     { id: '4', title: 'Operational' },
 ])
-
+ 
 export function insertSupplier(data) {
     let suppliers=getAllSuppliers();
     data['id'] = generateSupplierId()
